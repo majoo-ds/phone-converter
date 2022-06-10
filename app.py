@@ -48,7 +48,7 @@ df[select_col] = df[select_col].str.replace("(","")
 df[select_col] = df[select_col].str.replace(")","")
 df[select_col] = df[select_col].str.replace(" ","")
 df[select_col] = df[select_col].str.replace("+","")
-df = df.loc[~df[select_col].str.contains(r'(\d)\1{6}')].copy()
+df = df.loc[~df[select_col].str.contains(r'(\d)\1{5}')].copy()
 df["len"] = df[select_col].str.len()
 
 df = df.loc[((df[select_col].str.contains("^62")) | 
