@@ -1,8 +1,4 @@
 pandas
 numpy
-matplotlib
-seaborn
-plotly
 xlsxwriter
-streamlit-folium
 openpyxl
