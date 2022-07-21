@@ -48,6 +48,7 @@ df[select_col] = df[select_col].str.replace("(","")
 df[select_col] = df[select_col].str.replace(")","")
 df[select_col] = df[select_col].str.replace(" ","")
 df[select_col] = df[select_col].str.replace("+","")
+df[select_col] = df[select_col].str.replace("*","")
 df = df.loc[~df[select_col].str.contains(r'(\d)\1{5}')].copy()
 df["len"] = df[select_col].str.len()
 
@@ -60,7 +61,8 @@ df = df.loc[df["len"] > 8].copy()
 df["nomor_telepon_clean"] = df.apply(lambda row:
                           "62" + row[select_col][:] if row[select_col].startswith("8")
                            else row[select_col].replace("0", "62", 1) if row[select_col].startswith("0")
-                          else row[select_col], axis=1)
+                           else row[select_col].replace(row[select_col][0:3], "62", 1) if row[select_col].startswith("620")
+                        else row[select_col], axis=1)
 
 df.drop_duplicates(subset="nomor_telepon_clean", inplace=True)
 
