@@ -2,3 +2,6 @@ pandas
 numpy
 xlsxwriter
 openpyxl
+nltk
+google-auth
+google-cloud-translate
