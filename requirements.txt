@@ -5,3 +5,4 @@ openpyxl
 nltk
 google-auth
 google-cloud-translate
+streamlit-aggrid
