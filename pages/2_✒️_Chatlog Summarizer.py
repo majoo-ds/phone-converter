@@ -9,11 +9,12 @@ from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode
 import io
 import datetime
 
-# nltk dependencies
-from nltk.sentiment import SentimentIntensityAnalyzer
-from nltk.tokenize import RegexpTokenizer
-from nltk.corpus import stopwords
 
+
+
+
+# set page to wide by default
+st.set_page_config(layout="wide", page_title="Chatlog Summarizer", page_icon="🔖")
 
 @st.cache
 def download_nltk_data():
@@ -22,8 +23,11 @@ def download_nltk_data():
 
 download_nltk = download_nltk_data()
 
-# set page to wide by default
-st.set_page_config(layout="wide", page_title="Chatlog Summarizer", page_icon="🔖")
+
+# nltk dependencies
+from nltk.sentiment import SentimentIntensityAnalyzer
+from nltk.tokenize import RegexpTokenizer
+from nltk.corpus import stopwords
 
 # Create API client google cloud
 credentials = service_account.Credentials.from_service_account_info(st.secrets["gcp_service_account"], scopes=["https://www.googleapis.com/auth/cloud-platform"])
