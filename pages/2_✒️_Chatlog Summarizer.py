@@ -20,6 +20,8 @@ def download_nltk_data():
     nltk.download('stopwords')
     nltk.download('vader_lexicon')
 
+download_nltk = download_nltk_data()
+
 # set page to wide by default
 st.set_page_config(layout="wide", page_title="Chatlog Summarizer", page_icon="🔖")
 
