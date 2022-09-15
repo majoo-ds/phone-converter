@@ -2,7 +2,7 @@ import io
 import streamlit as st
 import pandas as pd
 import datetime
-from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode, JsCode
+
 
 # set page to wide by default
 st.set_page_config(page_title="Phone Number Converter 2.0", page_icon="📱")
